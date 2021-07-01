@@ -122,4 +122,17 @@ public class Display {
 
     }
 
+    public static void challengeOrder() {
+        getChallenges();
+        for (int i = 0; i < challenges.size(); i++) {
+            System.out.println("Challenge: " + challenges.get(i) + "Index: " + i);
+        }
+    }
+
+    public static void noInput() {
+        getChallenges();
+        for (int i = 0; i < challenges.size(); i++) {
+        }
+    }
+
 }

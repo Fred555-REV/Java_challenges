@@ -28,11 +28,13 @@ public class MainMenu {
         }
         Display.challengeGoals();
         System.out.println("Would you like to make inputs or use prepared code? a / b / none");
-//        if (scan.nextLine().equalsIgnoreCase("a")) {
-//
-//        } else if (scan.nextLine().equalsIgnoreCase("b")) {
-//
-//        }
+        if (scan.nextLine().equalsIgnoreCase("a")) {
+            System.out.println("nothing yet");
+        } else if (scan.nextLine().equalsIgnoreCase("b")) {
+            Display.challengeOrder();
+            System.out.println("Choose by index");
+
+        }
 
 
     }
