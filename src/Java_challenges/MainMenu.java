@@ -47,7 +47,7 @@ public class MainMenu {
                 System.out.println("Choose by index");
                 int noInputI = scan.nextInt();
                 scan.nextLine();
-                Test.run(noInputI);
+                NoInput.run(noInputI);
                 System.out.println("\n would you like to see another challenge? y/n");
                 String YorN = scan.nextLine();
                 if (YorN.equalsIgnoreCase("y")) {
