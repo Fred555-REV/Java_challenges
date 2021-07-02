@@ -38,7 +38,7 @@ public class MainMenu {
         System.out.println("Would you like to make inputs or use prepared code? a / b / none");
         String inputsPrepared = scan.nextLine();
         if (inputsPrepared.equalsIgnoreCase("a")) {
-            System.out.println("nothing yet");
+            System.out.println("Area under construction come back later.");
             MainMenu.main(null);
         } else if (inputsPrepared.equalsIgnoreCase("b")) {
             Display.challengeOrder();
