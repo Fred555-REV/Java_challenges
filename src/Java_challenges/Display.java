@@ -32,7 +32,7 @@ public class Display {
     @SuppressWarnings("MismatchedQueryAndUpdateOfCollection")
     public static void addList() {
         createList();
-        challenges.add("arrayofMultiples");
+        challenges.add("arrayOfMultiples");
         challenges.add("countBoomerangs");
         challenges.add("squarePatch");
         challenges.add("sevenBoom");
@@ -69,40 +69,12 @@ public class Display {
     }
 
     public static void challengeNames() {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Want to look at Edabit, Free Code Camp challenges, or both? E/F/B");
-        switch (scan.nextLine().toLowerCase(Locale.ROOT)) {
-            case "e":
-                System.out.println("arrayofMultiples");
-                System.out.println("countBoomerangs");
-                System.out.println("squarePatch");
-                System.out.println("sevenBoom");
-                System.out.println("convertTime");
-                System.out.println("mapping");
-                addList();
-                addGoalList();
-                break;
-            case "f":
-                System.out.println("reverseString");
-                System.out.println("factorial");
-                System.out.println("findLargestString");
-                System.out.println("arrayOfLargest");
-                System.out.println("cToF");
-                System.out.println("confirmTheEnding");
-                addList();
-                addGoalList();
-                break;
-            case "b":
-                addList();
-                addGoalList();
-                getChallenges();
-                for (String challenge : challenges) {
-                    System.out.println(challenge);
-                }
-                break;
-
+        addList();
+        addGoalList();
+        getChallenges();
+        for (String challenge : challenges) {
+            System.out.println(challenge);
         }
-        scan.close();
         System.out.println("---------------------------");
     }
 
@@ -125,14 +97,18 @@ public class Display {
     public static void challengeOrder() {
         getChallenges();
         for (int i = 0; i < challenges.size(); i++) {
-            System.out.println("Challenge: " + challenges.get(i) + "Index: " + i);
+            System.out.println("Challenge: " + challenges.get(i) + " Index: " + i);
         }
     }
 
-    public static void noInput() {
-        getChallenges();
+    public static void noInput(int index) {
         for (int i = 0; i < challenges.size(); i++) {
+
         }
+    }
+
+    public static void clearConsole() {
+        System.out.println(System.lineSeparator().repeat(100));
     }
 
 }
