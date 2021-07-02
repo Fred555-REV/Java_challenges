@@ -51,14 +51,20 @@ public class MainMenu {
                 System.out.println("\n would you like to see another challenge? y/n");
                 String YorN = scan.nextLine();
                 if (YorN.equalsIgnoreCase("y")) {
-                    System.out.println("rewinding...");
+                    System.out.println("rewinding...\n");
                 } else {
                     System.out.println("Ok, out you go.");
                     i++;
                 }
             }
         } else {
-            System.out.println("No no no...");
+            System.out.println("No no noooooo...");
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            // There is no need for a pause other than amusement
             MainMenu.main(null);
         }
 
