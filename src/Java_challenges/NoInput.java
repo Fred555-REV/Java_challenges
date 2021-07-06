@@ -82,15 +82,22 @@ public class NoInput {
     }
 
     public static void arrayOfMultiples() {
+        System.out.println("Input is: 7 , 5");
         Edabit.arrayofMultiples(7, 5);
+        System.out.println("Input is: 12 , 10");
         Edabit.arrayofMultiples(12, 10);
+        System.out.println("Input is: 17 , 6");
         Edabit.arrayofMultiples(17, 6);
     }
 
     public static void squarePatch() {
+        System.out.println("Input is: 0");
         Edabit.squarePatch(0);
+        System.out.println("Input is: 1");
         Edabit.squarePatch(1);
+        System.out.println("Input is: 3");
         Edabit.squarePatch(3);
+        System.out.println("Input is: 5");
         Edabit.squarePatch(5);
     }
 
@@ -274,7 +281,9 @@ public class NoInput {
     }
 
     public static void reverseString() {
+        System.out.println("Input is: racecars");
         System.out.println(FCC.reverseString("racecars"));
+        System.out.println("Input is: The largest string is humongous left foot.");
         System.out.println(FCC.reverseString("reverse"));
     }
 
@@ -283,25 +292,35 @@ public class NoInput {
     }
 
     public static void findLargestString() {
+        System.out.println("Input is: The largest string is humongous left foot.");
         System.out.println(FCC.findLargestString("The largest string is humongous left foot."));
+        System.out.println("Input is: airplane aeronautics accent accident axe air");
         System.out.println(FCC.findLargestString("airplane aeronautics accent accident axe air"));
     }
 
     public static void arrayOfLargest() {
+        System.out.println("Input is: {{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}}");
         FCC.arrayOfLargest(new int[][]{{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}});
+        System.out.println("Input is: {{4, 9, 1, 3}, {13, 35, 18, 26}, {32, 35, 97, 39}, {1000000, 1001, 857, 1}}");
         FCC.arrayOfLargest(new int[][]{{4, 9, 1, 3}, {13, 35, 18, 26}, {32, 35, 97, 39}, {1000000, 1001, 857, 1}});
     }
 
     public static void cToF() {
+        System.out.println("Input is: 10");
         System.out.println(FCC.cToF(10));
+        System.out.println("Input is: 24");
         System.out.println(FCC.cToF(24));
 
     }
 
     public static void confirmTheEnding() {
+        System.out.println("Input is: Open sesame, same");
         System.out.println(FCC.confirmTheEnding("Open sesame", "same"));
-        System.out.println(FCC.confirmTheEnding("what's in the box? nothing", "mountain"));
+        System.out.println("Input is: what's in the box ? nothing, mountain");
+        System.out.println(FCC.confirmTheEnding("what's in the box ? nothing", "mountain"));
+        System.out.println("Input is: Abstraction, action");
         System.out.println(FCC.confirmTheEnding("Abstraction", "action"));
+        System.out.println("Input is: Chicken is amazing, Chicken");
         System.out.println(FCC.confirmTheEnding("Chicken is amazing", "Chicken"));
 
     }
