@@ -50,7 +50,7 @@ public class MainMenu {
                 if (YorN.equalsIgnoreCase("y")) {
                     System.out.println("rewinding...\n");
                 } else {
-                    System.out.println("Ok, out you go.");
+                    System.out.println("See ya later");
                     i++;
                 }
             }
@@ -72,14 +72,7 @@ public class MainMenu {
                 }
             }
         } else {
-            System.out.println("No no noooooo...");
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            // There is no need for a pause other than amusement
-            MainMenu.main(null);
+            System.out.println("Goodbye");
         }
 
 
