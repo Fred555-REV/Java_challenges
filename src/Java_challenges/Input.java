@@ -1,241 +1,163 @@
 package Java_challenges;
 
+import java.util.Arrays;
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Input {
+    public static Scanner scan = new Scanner(System.in);
+
+    public static void run(int index) {
+        Display.getChallengeGoals().get(index);
+        switch (index) {
+            case 0:
+                arrayOfMultiples();
+                break;
+            case 1:
+                countBoomerangs();
+                break;
+            case 2:
+                squarePatch();
+                break;
+            case 3:
+                sevenBoom();
+                break;
+            case 4:
+                convertTime();
+                break;
+            case 5:
+                mapping();
+                break;
+            case 6:
+                reverseString();
+                break;
+            case 7:
+                factorial();
+                break;
+            case 8:
+                findLargestString();
+                break;
+            case 9:
+                arrayOfLargest();
+                break;
+            case 10:
+                cToF();
+                break;
+            case 11:
+                confirmTheEnding();
+                break;
+        }
+    }
+
     public static void mapping() {
-        String[] arr3 = new String[]{"a", "b", "c"};
-        System.out.println("input is: abc");
-        Edabit.mapping(arr3);
+        System.out.println("Enter amount of letters to map.");
+        int charAmount = scan.nextInt();
+        scan.nextLine();
+        String[] arr = new String[charAmount];
+        for (int i = 0; i < charAmount; i++) {
+            System.out.println("Enter lowercase letter " + (i + 1));
+            arr[i] = scan.next();
+        }
+        System.out.println(Edabit.mapping(arr));
     }
 
     public static void sevenBoom() {
-        int[] numArr3 = new int[]{2, 55, 60, 97, 86};
-        System.out.println("input is: 2, 55, 60, 97, 86");
-        System.out.println(Edabit.sevenBoom(numArr3));// yes
+        System.out.println("enter 7, 1-3 digit numbers");
+        int[] arr = new int[7];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = scan.nextInt();
+            scan.nextLine();
+        }
+        System.out.println(Edabit.sevenBoom(arr));// yes
     }
 
     public static void countBoomerangs() {
-        int[] arrBoom1 = {9, 5, 9, 5, 1, 1, 1};
-        System.out.println("input is: 9, 5, 9, 5, 1, 1, 1");
-        Edabit.countBoomerangs(arrBoom1);// ➞ 2
+        int[] arr = new int[9];
+        System.out.println("enter 9, 1 digit numbers with at least one \"boomerang\" ex. 121 or 313");
+        for (int i = 0; i < arr.length; i++) {
+            int num = scan.nextInt();
+            scan.nextLine();
+            arr[i] = num;
+        }
+        Edabit.countBoomerangs(arr);
     }
 
     public static void arrayOfMultiples() {
-        Edabit.arrayofMultiples(7, 5);
+        System.out.println("Enter initial number.");
+        int num = scan.nextInt();
+        scan.nextLine();
+        System.out.println("Enter length of array.");
+        int length = scan.nextInt();
+        scan.nextLine();
+        Edabit.arrayofMultiples(num, length);
     }
 
     public static void squarePatch() {
-        Edabit.squarePatch(0);
-        Edabit.squarePatch(1);
-        Edabit.squarePatch(3);
+        System.out.println("Enter amount of square patches");
+        int amount = scan.nextInt();
+        scan.nextLine();
+        for (int i = 0; i < amount; i++) {
+            int num = scan.nextInt();
+            Edabit.squarePatch(num);
+            scan.nextLine();
+        }
     }
 
-    public static int convertTime(int initialTime) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Convert from what time? second/minute/hour/day/week/month/year");
-        String fromTime = scan.nextLine().toLowerCase(Locale.ROOT);
-        System.out.println("Convert to which time? second/minute/hour/day/week/month/year");
-        String toTime = scan.nextLine().toLowerCase(Locale.ROOT);
-        switch (fromTime) {
-            case "second":
-            case "seconds":
-                switch (toTime) {
-                    case "minute":
-                    case "minutes":
-                        return initialTime / 60;
-                    case "hour":
-                    case "hours":
-                        return initialTime / 360;
-                    case "day":
-                    case "days":
-                        return initialTime / 360 / 24;
-                    case "week":
-                    case "weeks":
-                        return initialTime / 360 / 24 / 7;
-                    case "month":
-                    case "months":
-                        return initialTime / 360 / 24 / 30;
-                    case "year":
-                    case "years":
-                        return initialTime / 360 / 24 / 365;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-            case "minute":
-            case "minutes":
-                switch (toTime) {
-                    case "second":
-                    case "seconds":
-                        return initialTime * 60;
-                    case "hour":
-                    case "hours":
-                        return initialTime / 60;
-                    case "day":
-                    case "days":
-                        return initialTime / 60 / 24;
-                    case "week":
-                    case "weeks":
-                        return initialTime / 60 / 24 / 7;
-                    case "month":
-                    case "months":
-                        return initialTime / 60 / 24 / 30;
-                    case "year":
-                    case "years":
-                        return initialTime / 60 / 24 / 365;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-            case "hour":
-            case "hours":
-                switch (toTime) {
-                    case "second":
-                    case "seconds":
-                        return initialTime * 360;
-                    case "minute":
-                    case "minutes":
-                        return initialTime * 60;
-                    case "day":
-                    case "days":
-                        return initialTime / 24;
-                    case "week":
-                    case "weeks":
-                        return initialTime / 24 / 7;
-                    case "month":
-                    case "months":
-                        return initialTime / 24 / 30;
-                    case "year":
-                    case "years":
-                        return initialTime / 24 / 365;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-            case "day":
-            case "days":
-                switch (toTime) {
-                    case "second":
-                    case "seconds":
-                        return initialTime * 24 * 360;
-                    case "minute":
-                    case "minutes":
-                        return initialTime * 24 * 60;
-                    case "hour":
-                    case "hours":
-                        return initialTime * 24;
-                    case "week":
-                    case "weeks":
-                        return initialTime / 7;
-                    case "month":
-                    case "months":
-                        return initialTime / 30;
-                    case "year":
-                    case "years":
-                        return initialTime / 365;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-            case "week":
-            case "weeks":
-                switch (toTime) {
-                    case "second":
-                    case "seconds":
-                        return initialTime * 7 * 24 * 360;
-                    case "minute":
-                    case "minutes":
-                        return initialTime * 7 * 24 * 60;
-                    case "hour":
-                    case "hours":
-                        return initialTime * 7 * 24;
-                    case "day":
-                    case "days":
-                        return initialTime * 7;
-                    case "month":
-                    case "months":
-                        return initialTime / 4;
-                    case "year":
-                    case "years":
-                        return initialTime / 52;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-            case "month":
-            case "months":
-                switch (toTime) {
-                    case "second":
-                    case "seconds":
-                        return initialTime * 30 * 24 * 360;
-                    case "minute":
-                    case "minutes":
-                        return initialTime * 30 * 24 * 60;
-                    case "hour":
-                    case "hours":
-                        return initialTime * 30 * 24;
-                    case "day":
-                    case "days":
-                        return initialTime * 30;
-                    case "week":
-                    case "weeks":
-                        return initialTime * 4;
-                    case "year":
-                    case "years":
-                        return initialTime / 12;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-            case "year":
-            case "years":
-                switch (toTime) {
-                    case "second":
-                    case "seconds":
-                        return initialTime * 365 * 24 * 360;
-                    case "minute":
-                    case "minutes":
-                        return initialTime * 365 * 24 * 60;
-                    case "hour":
-                    case "hours":
-                        return initialTime * 365 * 24;
-                    case "day":
-                    case "days":
-                        return initialTime * 365;
-                    case "week":
-                    case "weeks":
-                        return initialTime * 52;
-                    case "month":
-                    case "months":
-                        return initialTime * 12;
-                }
-                System.out.println("Error, time not found");
-                return 404;
-        }
-        System.out.println("Error, time not found");
-        return 404;
+    public static void convertTime() {
+        System.out.println("Enter an integer as initial time");
+        int initialTime = scan.nextInt();
+        scan.nextLine();
+        System.out.println(Edabit.convertTime(initialTime));
     }
 
     public static void reverseString() {
-        System.out.println(FCC.reverseString("reverse"));
+        System.out.println("Enter string to reverse");
+        String reverse = scan.next();
+        System.out.println(FCC.reverseString(reverse));
     }
 
     public static void factorial() {
-        System.out.println(FCC.factorial(7));
+        System.out.println("Enter number to create factorial.");
+        int factorial = scan.nextInt();
+        scan.nextLine();
+        System.out.println(FCC.factorial(factorial));
     }
 
     public static void findLargestString() {
-        System.out.println(FCC.findLargestString("The largest string is humongous left foot."));
+        System.out.println("Enter sentence with no punctuation");
+        String sentence = scan.nextLine();
+        System.out.println(FCC.findLargestString(sentence));
     }
 
     public static void arrayOfLargest() {
-        FCC.arrayOfLargest(new int[][]{{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}});
+        int[][] outerArr = new int[4][];
+        for (int i = 0; i < 4; i++) {
+            int[] innerArr = new int[4];
+            System.out.println("Enter 4 numbers for array " + (i + 1) + "/4");
+            for (int j = 0; j < 4; j++) {
+                innerArr[j] = scan.nextInt();
+                scan.nextLine();
+            }
+            outerArr[i] = innerArr;
+        }
+//                {{4, 5, 1, 3}, {13, 27, 18, 26}, {32, 35, 37, 39}, {1000, 1001, 857, 1}}
+        FCC.arrayOfLargest(outerArr);
     }
 
     public static void cToF() {
-        System.out.println(FCC.cToF(10));
-
+        System.out.println("Enter Celsius degree");
+        int celcius = scan.nextInt();
+        scan.nextLine();
+        System.out.println(FCC.cToF(celcius));
 
     }
 
     public static void confirmTheEnding() {
-        System.out.println(FCC.confirmTheEnding("Open sesame", "same"));
+        System.out.println("Enter string");
+        String str = scan.nextLine();
+        System.out.println("Enter last word or letters of the string");
+        String ending = scan.nextLine();
+        System.out.println(FCC.confirmTheEnding(str, ending));
 
 
     }

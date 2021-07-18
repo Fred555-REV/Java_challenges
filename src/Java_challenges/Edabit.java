@@ -1,6 +1,7 @@
 package Java_challenges;
 
 import java.util.*;
+
 @SuppressWarnings("ALL")
 
 public class Edabit {
@@ -15,7 +16,7 @@ public class Edabit {
 
     public static String /*void*/ sevenBoom(int[] arr) {
         for (int i : arr) {
-
+//            System.out.println(String.valueOf(i));
             for (int j = 0; j < String.valueOf(i).length(); j++) {
 //                System.out.println(String.valueOf(i).charAt(j));
 
@@ -26,7 +27,7 @@ public class Edabit {
             }
 
         }
-        return "there is no 7 in the array";
+        return "No 7 found in the array";
     }
 
     public static void countBoomerangs(int[] arr) {

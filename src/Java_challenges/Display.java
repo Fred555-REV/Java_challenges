@@ -59,7 +59,7 @@ public class Display {
         challengeGoals.add("Creates an array that takes the form of a square with the sides lengths being a given number.");
         challengeGoals.add("If any digit in an array is a seven a BOOM! will be outputted.");
         challengeGoals.add("Converts time from and to seconds/minutes/hours/days/weeks/months/years");
-        challengeGoals.add("Creates a map that outputs the letters of a string separately as lowercase and uppercase.");
+        challengeGoals.add("Creates a map that outputs lowercase letters with their uppercase equivalent.");
         challengeGoals.add("Reverses a string.");
         challengeGoals.add("Creates and solves a factorial of a given number.");
         challengeGoals.add("Finds the largest string in a sentence.");
@@ -98,12 +98,6 @@ public class Display {
         getChallenges();
         for (int i = 0; i < challenges.size(); i++) {
             System.out.println("Challenge: " + challenges.get(i) + " Index: " + i);
-        }
-    }
-
-    public static void noInput(int index) {
-        for (int i = 0; i < challenges.size(); i++) {
-
         }
     }
 

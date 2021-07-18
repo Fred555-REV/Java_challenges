@@ -14,7 +14,7 @@ public class Test {
     @SuppressWarnings("ALL")// this is the best creation in all of JAVA
 
     public static void main(String[] args) {
-
+        Edabit.sevenBoom(new int[]{1, 23, 34, 25, 57, 68, 79});
 //        Scanner scan = new Scanner(System.in);
 //        System.out.println("Enter amount of time conversions.");
 //        int n = scan.nextInt();
