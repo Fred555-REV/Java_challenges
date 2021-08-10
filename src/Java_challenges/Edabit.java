@@ -281,16 +281,36 @@ public class Edabit {
 
     public static String atBashCipher(String input) {
         StringBuilder output = new StringBuilder();
+        System.out.println("\nEncoded");
         for (Character letter : input.toCharArray()) {
+            System.out.print(encode(letter));
             output.append(encode(letter));
         }
-
+        System.out.println("\nDecoded");
+        for (Character letter : input.toCharArray()) {
+            System.out.print(decode(encode(letter)));
+        }
+        System.out.println();
+//        System.out.println();
         return output.toString();
     }
 
     public static Character encode(Character letter) {
         String upperBet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String lowerBet = "abcdefghijklmnopqrstuvwxyz";
+        for (int i = 0; i < upperBet.length(); i++) {
+            if (letter == upperBet.charAt(i)) {
+                return upperBet.charAt(upperBet.length() - 1 - i);
+            } else if (letter == lowerBet.charAt(i)) {
+                return lowerBet.charAt(lowerBet.length() - 1 - i);
+            }
+        }
+        return letter;
+    }
+
+    public static Character decode(Character letter) {
+        String upperBet = "ZYXWVUTSRQPONMLKJIHGFEDCBA";
+        String lowerBet = "zyxwvutsrqponmlkjihgfedcba";
         for (int i = 0; i < upperBet.length(); i++) {
             if (letter == upperBet.charAt(i)) {
                 return upperBet.charAt(upperBet.length() - 1 - i);
