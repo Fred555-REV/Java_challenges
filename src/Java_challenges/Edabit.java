@@ -244,4 +244,36 @@ public class Edabit {
         System.out.println("Error, time not found");
         return 404;
     }
+
+    public static String specialReverseString(String string) {
+        List<Character> letterPosition = new ArrayList<>();
+        List<Boolean> spacePositions = new ArrayList<>();
+        for (int i = 0; i < string.length(); i++) {
+            Character letter = string.charAt(i);
+            if (letter == (' ')) {
+                spacePositions.add(true);
+            } else {
+                letterPosition.add(letter.toLowerCase(letter));
+                spacePositions.add(false);
+            }
+        }
+        StringBuilder output = new StringBuilder();
+
+        int reversePos = letterPosition.size()-1;
+        for (int j = 0; j < string.length(); j++) {
+            Character letter = string.charAt(j);
+            if (spacePositions.get(j)) {
+                output.append(" ");
+            } else {
+                Character reverseLetter = letterPosition.get(reversePos);
+                if (letter == letter.toUpperCase(letter)) {
+                    output.append(reverseLetter.toUpperCase(reverseLetter));
+                } else {
+                    output.append(reverseLetter);
+                }
+                reversePos--;
+            }
+        }
+        return output.toString();
+    }
 }

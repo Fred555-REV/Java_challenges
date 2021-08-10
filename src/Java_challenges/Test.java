@@ -14,16 +14,13 @@ public class Test {
     @SuppressWarnings("ALL")// this is the best creation in all of JAVA
 
     public static void main(String[] args) {
-        Edabit.sevenBoom(new int[]{1, 23, 34, 25, 57, 68, 79});
+//        Edabit.sevenBoom(new int[]{1, 23, 34, 25, 57, 68, 79});
 //        Scanner scan = new Scanner(System.in);
-//        System.out.println("Enter amount of time conversions.");
-//        int n = scan.nextInt();
-//        for (int i = 0; i < n; i++) {
-//            System.out.println("Enter integer to convert.");
-//            int initialTime = scan.nextInt();
-//            System.out.println(Edabit.convertTime(initialTime));
-//        }
-//        scan.close();
+//
+
+        System.out.println(Edabit.specialReverseString("Edabit"));
+        System.out.println(Edabit.specialReverseString("UPPER lower"));
+        System.out.println(Edabit.specialReverseString("1 23 456"));
 
     }
 }
