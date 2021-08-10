@@ -1,6 +1,8 @@
 package Java_challenges;
 
+import java.nio.charset.StandardCharsets;
 import java.util.*;
+import java.util.function.BinaryOperator;
 
 @SuppressWarnings("ALL")
 
@@ -245,11 +247,11 @@ public class Edabit {
         return 404;
     }
 
-    public static String specialReverseString(String string) {
+    public static String specialReverseString(String input) {
         List<Character> letterPosition = new ArrayList<>();
         List<Boolean> spacePositions = new ArrayList<>();
-        for (int i = 0; i < string.length(); i++) {
-            Character letter = string.charAt(i);
+        for (int i = 0; i < input.length(); i++) {
+            Character letter = input.charAt(i);
             if (letter == (' ')) {
                 spacePositions.add(true);
             } else {
@@ -259,9 +261,9 @@ public class Edabit {
         }
         StringBuilder output = new StringBuilder();
 
-        int reversePos = letterPosition.size()-1;
-        for (int j = 0; j < string.length(); j++) {
-            Character letter = string.charAt(j);
+        int reversePos = letterPosition.size() - 1;
+        for (int j = 0; j < input.length(); j++) {
+            Character letter = input.charAt(j);
             if (spacePositions.get(j)) {
                 output.append(" ");
             } else {
@@ -275,5 +277,27 @@ public class Edabit {
             }
         }
         return output.toString();
+    }
+
+    public static String atBashCipher(String input) {
+        StringBuilder output = new StringBuilder();
+        for (Character letter : input.toCharArray()) {
+            output.append(encode(letter));
+        }
+
+        return output.toString();
+    }
+
+    public static Character encode(Character letter) {
+        String upperBet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lowerBet = "abcdefghijklmnopqrstuvwxyz";
+        for (int i = 0; i < upperBet.length(); i++) {
+            if (letter == upperBet.charAt(i)) {
+                return upperBet.charAt(upperBet.length() - 1 - i);
+            } else if (letter == lowerBet.charAt(i)) {
+                return lowerBet.charAt(lowerBet.length() - 1 - i);
+            }
+        }
+        return letter;
     }
 }

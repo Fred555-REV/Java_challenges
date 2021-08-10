@@ -21,6 +21,9 @@ public class Test {
         System.out.println(Edabit.specialReverseString("Edabit"));
         System.out.println(Edabit.specialReverseString("UPPER lower"));
         System.out.println(Edabit.specialReverseString("1 23 456"));
+        System.out.println(Edabit.atBashCipher("apple"));
+        System.out.println(Edabit.atBashCipher("Hello world!"));
+        System.out.println(Edabit.atBashCipher("Christmas is the 25th of December"));
 
     }
 }
